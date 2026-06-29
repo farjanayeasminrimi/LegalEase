@@ -1,140 +1,226 @@
-# ⚖️ LegalEase – Online Lawyer Hiring Platform
+# LegalEase
 
-A full-stack MERN-based marketplace platform that connects clients, lawyers, and administrators in a seamless legal service ecosystem. Users can hire lawyers, lawyers can manage their services, and admins can control the entire system with analytics and role-based access.
-
----
-
-## 🚀 Live Demo
-> Add your live link here  
-`https://lawyer-10.vercel.app`
+LegalEase is a full-stack MERN application that modernizes the process of hiring legal professionals. The platform allows clients to find and hire verified lawyers, enables lawyers to manage their professional services, and provides administrators with tools to oversee users, transactions, and platform performance through a centralized dashboard.
 
 ---
 
-## 📌 Project Purpose
+## Live Demo
 
-LegalEase aims to modernize legal service accessibility by removing traditional barriers in hiring lawyers. It enables:
+https://legal-ease-mauve.vercel.app
+---
 
-- Clients to easily find and hire legal experts
-- Lawyers to publish and manage services after verification
-- Admins to manage users, transactions, and platform analytics
+## Overview
+
+LegalEase is built to simplify access to legal services by creating a digital marketplace where clients and lawyers can connect efficiently. The application provides a secure hiring workflow, role-based access control, online payment integration, and separate dashboards tailored to different types of users.
 
 ---
 
-## 🧠 Key Features
-
-### 👤 Authentication System
-- Email & Password login
-- Google OAuth login
-- Role-based access (User / Lawyer / Admin)
-- JWT-based authentication (7-day expiry)
-
-### ⚖️ Lawyer Marketplace
-- Browse lawyers publicly
-- Search & filter by specialization, fee, availability
-- View detailed lawyer profiles
-- Hire lawyers with confirmation modal
-
-### 💳 Payment System
-- Stripe integration for hiring payments
-- Transaction tracking for all roles
-- Paid / Pending status system
-
-### 💬 Comment System
-- Only hired users can comment
-- Edit & delete comments
-- Secure API validation
-
-### 📊 Dashboards (Role-based)
-
-#### 👤 User Dashboard
-- Hiring history (Pending / Accepted / Rejected)
-- Payment after lawyer approval
-- Profile update
-- Comment management
-
-#### 👨‍⚖️ Lawyer Dashboard
-- Manage hiring requests (Accept / Reject)
-- Manage legal profile/services
-- Upload image via imgBB
-- View hiring history
-
-#### 🛡️ Admin Dashboard
-- Manage users (role change / delete)
-- View all transactions
-- Platform analytics (users, lawyers, revenue, hires)
-
----
-
-## 🏗️ Tech Stack
-
-### Frontend
-- ⚛️ React / Next.js → :contentReference[oaicite:0]{index=0}  
-- 🎨 Tailwind CSS  
-- 🎞️ Framer Motion (animations)  
-- 🧩 Component-based UI
-
-### Backend
-- 🟢 Node.js  
-- 🚂 Express.js  
-- 🍃 MongoDB → :contentReference[oaicite:1]{index=1}  
-- 🔐 JWT Authentication  
-- ☁️ imgBB API (image upload)
-
-### Payment
-- 💳 Stripe → :contentReference[oaicite:2]{index=2}  
+## Key Features
 
 ### Authentication
-- 🔑 BetterAuth / OAuth  
-- 🔐 JWT Token System
+
+- Email and password authentication
+- Google Sign-In
+- JWT-based authentication
+- Protected routes
+- Role-based authorization
+
+### Lawyer Marketplace
+
+- Browse lawyers without logging in
+- Search lawyers by name
+- Filter lawyers by specialization, consultation fee, and availability
+- View detailed lawyer profiles
+- Submit hiring requests
+
+### Payment System
+
+- Secure Stripe payment integration
+- Payment after lawyer approval
+- Transaction history
+- Payment status tracking
+
+### Review System
+
+- Only hired clients can submit reviews
+- Edit existing reviews
+- Delete reviews
+- Backend validation for secure access
 
 ---
 
-## 📁 Main Pages
+## User Roles
 
-### 🏠 Home Page
-- Hero banner with CTA
-- Featured lawyers (auto-refresh)
-- Top legal experts
-- Legal categories grid
-- Framer Motion animations
+### Client
 
-### 🔎 Browse Lawyers
+Clients can:
+
+- Browse available lawyers
+- Search and filter legal professionals
+- Send hiring requests
+- Complete payments
+- View hiring history
+- Update profile information
+- Manage personal reviews
+
+### Lawyer
+
+Lawyers can:
+
+- Manage their professional profile
+- Upload profile images using imgBB
+- Accept or reject hiring requests
+- View hiring history
+- Update legal service information
+
+### Administrator
+
+Administrators can:
+
+- Manage users
+- Change user roles
+- Remove user accounts
+- Monitor transactions
+- View revenue reports
+- Access platform analytics
+
+---
+
+## Application Workflow
+
+```text
+Register or Login
+        │
+        ▼
+Browse Lawyers
+        │
+        ▼
+View Lawyer Profile
+        │
+        ▼
+Submit Hiring Request
+        │
+        ▼
+Lawyer Reviews Request
+        │
+   ┌────┴────┐
+   │         │
+Reject    Accept
+   │         │
+   ▼         ▼
+ End    Complete Payment
+             │
+             ▼
+      Hiring Completed
+             │
+             ▼
+      Submit a Review
+```
+
+---
+
+## Pages
+
+### Home
+
+- Hero banner
+- Featured lawyers
+- Legal categories
+- Top professionals
+- Smooth animations
+
+### Browse Lawyers
+
 - Public access
-- Search, filter, pagination
-- Responsive grid layout
-- Lawyer cards with details
+- Search functionality
+- Advanced filtering
+- Pagination
+- Responsive layout
 
-### 👨‍⚖️ Lawyer Details
-- Full profile view
-- Hire modal (login required)
-- Comment section (restricted access)
+### Lawyer Details
+
+- Professional profile
+- Biography
+- Consultation fee
+- Hire option
+- Review section
+
+### Dashboard
+
+Each authenticated user is provided with a dedicated dashboard based on their assigned role.
+
+**Client Dashboard**
+
+- Hiring history
+- Payment records
+- Pending requests
+- Profile management
+- Review management
+
+**Lawyer Dashboard**
+
+- Hiring requests
+- Client history
+- Profile management
+- Service management
+
+**Admin Dashboard**
+
+- User management
+- Transaction management
+- Revenue overview
+- Platform statistics
 
 ---
 
-## 📊 Dashboard Routes
+## Technology Stack
 
-### 👤 User
-- `/dashboard/user/hiring-history`
-- `/dashboard/user/update-profile`
-- `/dashboard/user/comments`
+### Frontend
 
-### ⚖️ Lawyer
-- `/dashboard/lawyer/hiring-history`
-- `/dashboard/lawyer/manage-legal-profile`
+- React.js
+- Tailwind CSS
+- React Router
+- Axios
+- Framer Motion
 
-### 🛡️ Admin
-- `/dashboard/admin/manage-users`
-- `/dashboard/admin/all-transactions`
-- `/dashboard/admin/analytics`
+### Backend
+
+- Node.js
+- Express.js
+- MongoDB
+
+### Authentication
+
+- Firebase Authentication
+- Google OAuth
+- JSON Web Token (JWT)
+
+### Payment
+
+- Stripe
+
+### Cloud Storage
+
+- imgBB API
 
 ---
 
-## 🔐 Security Features
-- JWT protected APIs
-- Role-based route protection
-- Secure environment variables
-- MongoDB credentials hidden in `.env`
+## Security
+
+- JWT authentication
+- Protected API routes
+- Role-based authorization
+- Backend request validation
+- Secure payment workflow
+- Environment variable protection
 
 ---
 
-## 📦 Installation
+## Responsive Design
+
+The application is optimized for:
+
+- Desktop
+- Laptop
+- Tablet
+- Mobile devices
