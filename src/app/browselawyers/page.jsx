@@ -23,7 +23,7 @@ const Lawyers = async ({ searchParams }) => {
 
     // 3. PAGINATION CONFIGURATION
     const currentPage = Number(params?.page) || 1;
-    const itemsPerPage = 6; 
+    const itemsPerPage = 3; 
 
     let filteredLawyers = [...lawyerdata];
 
