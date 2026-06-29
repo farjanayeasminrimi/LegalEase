@@ -1,0 +1,93 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+:root {
+  /* Override any color variable */
+  --accent: oklch(0.7 0.25 260);
+  --success: oklch(0.65 0.15 155);
+}
+
+/* Glassmorphism Classes */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.dark .glass-nav {
+  background: rgba(9, 9, 11, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.06);
+}
+.dark .glass-card {
+  background: rgba(17, 24, 39, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(200, 200, 200, 0.3);
+  transition: all 0.3s ease;
+}
+.dark .glass-input {
+  background: rgba(24, 24, 27, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: #6366f1;
+}
+.dark .glass-input:focus {
+  background: rgba(24, 24, 27, 0.7);
+  border-color: #6366f1;
+}
+
+/* Background floating glow blobs */
+@keyframes float-slow {
+  0% { transform: translateY(0px) translateX(0px) scale(1); }
+  50% { transform: translateY(-40px) translateX(30px) scale(1.1); }
+  100% { transform: translateY(0px) translateX(0px) scale(1); }
+}
+
+@keyframes float-reverse {
+  0% { transform: translateY(0px) translateX(0px) scale(1.1); }
+  50% { transform: translateY(40px) translateX(-30px) scale(0.9); }
+  100% { transform: translateY(0px) translateX(0px) scale(1.1); }
+}
+
+.glow-orb-1 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(130px);
+  opacity: 0.15;
+  pointer-events: none;
+  animation: float-slow 20s ease-in-out infinite alternate;
+}
+.glow-orb-2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(130px);
+  opacity: 0.15;
+  pointer-events: none;
+  animation: float-reverse 25s ease-in-out infinite alternate;
+}
+.dark .glow-orb-1, .dark .glow-orb-2 {
+  opacity: 0.22;
+}
